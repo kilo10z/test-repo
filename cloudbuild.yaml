@@ -4,7 +4,10 @@ steps:
     args:
       - "-c"
       - |
-        gsutil ls gs://fresh1 --impersonate-service-account=189614076516-compute@developer.gserviceaccount.com
+        gcloud auth activate-service-account --key-file=/workspace/cloud-build-sa-key.json
+        gcloud auth print-access-token --impersonate-service-account=189614076516-compute@developer.gserviceaccount.com
+        gsutil ls gs://fresh1
+
 
 
 options:
