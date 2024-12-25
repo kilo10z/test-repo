@@ -7,3 +7,8 @@ steps:
     gcloud auth activate-service-account --key-file=/workspace/service-account-key.json
     gcloud auth print-access-token --impersonate-service-account=189614076516-compute@developer.gserviceaccount.com | gcloud auth activate-service-account --access-token-file=-
     gsutil cp gs://fresh1/your-file.txt .
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  logsBucket: gs://kilo-gcp_cloudbuild
+
